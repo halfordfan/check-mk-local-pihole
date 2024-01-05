@@ -10,3 +10,5 @@ php-sqllite3 extensions
 
 1. Copy the file into the agent local plugins directory (/usr/lib/check_mk_agent/plugins or equivalent).
 2. Make sure it is executable (chmod 700)
+3. Inventory the host in CheckMK.
+4. Enjoy query statistics.
