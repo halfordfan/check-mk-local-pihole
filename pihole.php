@@ -37,7 +37,7 @@ print('0 "Pi-Hole Stats" ' . implode("|",$metricsArray) . ' Pi-Hole stats') . PH
 # Now lets see when Gravity was last updated.  WARN if over a week since
 # Pi-Hole uses that as a default schedule.
 $lastgravity=date('U') - $summaryArray['gravity_last_updated']['absolute'];
-print('P "Pi-Hole Gravity" daysold=' . round($lastgravity/86400,0) . ';7 Pi-Hole Gravity lists were updated ');
+print('P "Pi-Hole Gravity" daysold=' . round($lastgravity/86400,0) . ';8;15 Pi-Hole Gravity lists were updated ');
 switch(TRUE){
   case 60 > $lastgravity:
     $number = $lastgravity;
