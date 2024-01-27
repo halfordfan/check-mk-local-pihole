@@ -4,8 +4,8 @@ A local check for pihole instances running on Linux.  There is a special agent i
 
 # Requirements
 
-Check-MK host agent
-php 8.x, already required by Pi-Hole.
+- Check-MK host agent
+- php 8.x, already required and installed by Pi-Hole.
 
 # Installation
 
