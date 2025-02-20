@@ -5,11 +5,14 @@ A local check for pihole instances running on Linux.  There is a special agent i
 # Requirements
 
 - Check-MK host agent
-- php 8.x, already required and installed by Pi-Hole.
+- php 8.x, required and installed by Pi-hole with 5.x Pi-Hole.
 
 # Installation
 
-1. Copy the file into the agent local checks directory on the Pi-Hole host.
-2. Make sure it is executable (chmod 700).
-3. Inventory the host in CheckMK.
-4. Enjoy query statistics, update status, and enabled/disabled alerts.
+1. Copy the proper file into the agent local checks directory on the Pi-Hole host
+   - pihole5.php for Pi-hole 5.x
+   - pihole6.php for Pi-hole 6.x
+3. Make sure it is executable (chmod 700).
+4. For 6.x, edit the password 
+5. Inventory the host in CheckMK.
+6. Enjoy query statistics, update status, and enabled/disabled alerts.
