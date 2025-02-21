@@ -5,12 +5,10 @@
 # Written in PHP because, well, I know it and Pi-Hole runs on it.
 # Update to v6 by wmtech-1 with minor edits - thank you!
 
-# Get the sess:ion ID (sid) to authorize us...
-# Set to an empty string if you do not have a password set.
-$MP = 'YOUR-PIHOLE-APP-PASSWORD';
-$MP = '';
+# Uncomment the line below if you have a password set to the pihole UI.
+#$MP = 'YOUR-PIHOLE-APP-PASSWORD';
 
-if ( $MP == '' ) {
+if ( isset($MP) ) {
     $url = 'http://localhost/api/auth';
     $payload = json_encode( array( "password" => $MP ) );
     $ch = curl_init($url);
