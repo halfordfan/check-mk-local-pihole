@@ -8,6 +8,9 @@
 # Uncomment the line below if you have a password set to the pihole UI.
 #$MP = 'YOUR-PIHOLE-APP-PASSWORD';
 
+# Silence error reporting.
+error_reporting(0);
+
 if ( isset($MP) ) {
     $url = 'http://localhost/api/auth';
     $payload = json_encode( array( "password" => $MP ) );
@@ -32,6 +35,9 @@ if ( isset($MP) ) {
 }
 
 $status = file_get_contents('http://localhost/api/dns/blocking' . $sid);
+if ( ! $status ) {
+    die('API returned no data!  Check password and access lists!' . PHP_EOL);
+}
 # Decode the summary JSON to an array so that we can work with it.
 $statusArray = json_decode($status, TRUE);
 
