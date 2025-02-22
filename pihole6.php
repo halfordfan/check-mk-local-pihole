@@ -112,4 +112,17 @@ foreach ( array('core', 'web', 'ftl') as $key ) {
     }
 }
 print($update . ' "Pi-Hole Update" ' . implode("|",$metricsArray) . ' ' . $message) . PHP_EOL;
+
+# If a password was set, sessions are used.  Log us out.
+if ( isset($MP) ) {
+    $ch = curl_init($url . $sid);
+
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch,CURLOPT_HTTPHEADER, array('accept: application/json'));
+    curl_setopt($ch,CURLOPT_CUSTOMREQUEST, "DELETE");
+
+    $result = json_decode(curl_exec($ch), TRUE);
+    curl_close($ch);
+}
+
 ?>
