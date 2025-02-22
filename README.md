@@ -14,6 +14,5 @@ A local check for pihole instances running on Linux.  There is a special agent i
    - pihole6.php for Pi-hole 6.x
 3. Make sure it is executable (chmod 700).
 4. For 6.x, edit the password variable at the beginning of the file.  Comment it out if you run passwordless.
-5. For 6.x, increase the number of API sessions (recommend 32) and decrease the timeout (900) to avoid overrunning the API.
 6. Inventory the host in CheckMK.
 7. Enjoy query statistics, update status, and enabled/disabled alerts.
