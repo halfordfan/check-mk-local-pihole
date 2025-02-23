@@ -5,9 +5,11 @@ A local check for pihole instances running on Linux.  There is a special agent i
 # Requirements
 
 - Check-MK host agent
-- php 8.x, required and installed by Pi-hole with 5.x Pi-Hole.
+- The python version requires python 3.x (duh) with requests and time modules.
+- The legacy PHP version needs php 8.x, required and installed with 5.x Pi-Hole.
 
 # Installation
+
 Current Python 3.x version for Pi-hole 6.x
    1. Copy the pihole6.py into the agent local checks directory on the Pi-Hole host
    2. Make sure it is executable (chmod 700).
