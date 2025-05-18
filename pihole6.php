@@ -103,7 +103,7 @@ $metricsArray=array();
 $updates = file_get_contents('http://localhost/api/info/version' . $sid);
 $updatesArray = json_decode($updates, TRUE);
 foreach ( array('core', 'web', 'ftl') as $key ) {
-    if ( $updatesArray['version'][$key]['local']['hash'] !== $updatesArray['version'][$key]['remote']['hash'] ) {
+    if ( $updatesArray['version'][$key]['local']['version'] !== $updatesArray['version'][$key]['remote']['version'] ) {
         $metricsArray[]=$key . '=1';
         $update=1;
         $message="At least one Pi-Hole update is available (run 'pihole -up')";
