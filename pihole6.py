@@ -82,7 +82,7 @@ updates_data = response.json()
 metrics = []
 
 for key in ["core", "web", "ftl"]:
-    if updates_data["version"][key]["local"]["hash"] != updates_data["version"][key]["remote"]["hash"]:
+    if updates_data["version"][key]["local"]["version"] != updates_data["version"][key]["remote"]["version"]:
         metrics.append(f"{key}=1")
         update = 1
         message = "Pi-Hole update available (run 'pihole -up'), "
